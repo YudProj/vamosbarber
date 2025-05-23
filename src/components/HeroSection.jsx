@@ -22,7 +22,7 @@ const HeroSection = () => {
           {/* Konten Tengah */}
           <div className="w-full lg:w-1/3 text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 leading-tight">
-              VAMOS Barbershop
+              KUY Barbershop
             </h1>
             <p className="text-gray-700 text-base md:text-lg mb-6">
               Barbershop modern dengan gaya klasik — didirikan tahun 2024.
