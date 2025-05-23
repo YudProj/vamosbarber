@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Budi Santoso",
+    "review": "Pelayanan sangat ramah dan hasil potongannya memuaskan. Tempatnya juga nyaman!",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Rina Mulyani",
+    "review": "Suka banget sama konsep barbershop-nya, klasik tapi modern.",
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "name": "Andi Pratama",
+    "review": "Barbernya profesional, potongannya rapi. Recommended banget!",
+    "rating": 5
+  }
+]
