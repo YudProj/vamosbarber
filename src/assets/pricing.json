@@ -2,21 +2,25 @@
   {
     "name": "Anak-Anak",
     "price": "Rp 40.000",
+    "image": "/img/anak-anak.jpg",
     "features": ["Potong Rambut", "Cuci + Blow", "Hair Tonic", "Gaya Bebas"]
   },
   {
     "name": "Dewasa",
     "price": "Rp 50.000",
+    "image": "/img/dewasa.jpg",
     "features": ["Potong Rambut", "Cuci + Blow", "Hair Tonic", "Gaya Bebas"]
   },
   {
     "name": "Grooming",
     "price": "Rp 100.000",
-    "features": ["Potong rambut", "Cuci + Blow", "Perawatan wajah ", "Pijat kepala", "styling rambut"]
+    "image": "/img/grooming.jpg",
+    "features": ["Potong rambut", "Cuci + Blow", "Perawatan wajah", "Pijat kepala", "styling rambut"]
   },
   {
     "name": "Bleaching",
     "price": "Rp 150.000",
+    "image": "/img/bleaching.jpg",
     "features": ["Proses bleaching rambut", "Konsultasi warna", "Perlindungan rambut saat bleaching"]
   }
 ]

@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";  // pakai navigate untuk tombol
 import pricingData from "../assets/pricing.json";
 
 const Pricing = () => {
   const [packages, setPackages] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setPackages(pricingData);
   }, []);
+
+  const handleSelectPackage = (name) => {
+    const encodedName = encodeURIComponent(name);
+    navigate(`/pricing/${encodedName}`);
+  };
 
   return (
     <section className="bg-[#f9f6f1] py-40 px-6 md:px-12 lg:px-20">
@@ -20,12 +27,15 @@ const Pricing = () => {
             >
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">{item.name}</h3>
               <p className="text-2xl font-bold text-black mb-4">{item.price}</p>
-              <ul className="text-gray-600 text-sm mb-6 space-y-2">
+              <ul className="text-gray-600 text-sm mb-6 space-y-2 text-left">
                 {item.features.map((feature, i) => (
                   <li key={i}>• {feature}</li>
                 ))}
               </ul>
-              <button className="bg-black text-white py-2 px-6 rounded-md hover:bg-gray-800 transition">
+              <button
+                onClick={() => handleSelectPackage(item.name)}
+                className="bg-black text-white py-2 px-6 rounded-md hover:bg-gray-800 transition"
+              >
                 Pilih Paket
               </button>
             </div>
