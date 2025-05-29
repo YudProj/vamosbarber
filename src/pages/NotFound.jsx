@@ -1,6 +1,18 @@
+import { useEffect, useState } from "react";
 import NotFoundImage from "/img/notfound.jpg";
 
 export default function NotFounds() {
+  const [quote, setQuote] = useState("Memuat kutipan inspiratif...");
+
+  useEffect(() => {
+    fetch("https://api.adviceslip.com/advice", { cache: "no-cache" })
+      .then((res) => res.json())
+      .then((data) => setQuote(`"${data.slip.advice}"`))
+      .catch(() =>
+        setQuote("Tidak dapat memuat kutipan. Silakan muat ulang halaman.")
+      );
+  }, []);
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-white px-4 py-10">
       <div className="flex flex-col items-center max-w-md w-full text-center space-y-4">
@@ -14,6 +26,10 @@ export default function NotFounds() {
         <p className="text-gray-600 px-2">
           Halaman yang Anda cari tidak tersedia atau sudah dipindahkan.
         </p>
+
+        <blockquote className="italic text-green-700 px-4">
+          {quote}
+        </blockquote>
 
         <button
           onClick={() => (window.location.href = "/")}
