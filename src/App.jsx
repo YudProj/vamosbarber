@@ -17,6 +17,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const KaryawanPage = lazy(() => import("./pages/KaryawanPage"));
 const ReservasiPage = lazy(() => import("./pages/ReservasiPage"));
 const Product = lazy(() => import("./pages/Product"));
+const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const AboutUs = lazy(() => import("./components/About"));
 const ContactUs = lazy(() => import("./components/ContactUs"));
@@ -32,7 +33,8 @@ function App() {
           {/* Main layout */}
           <Route element={<MainLayout />}>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/product" element={<Product/>} />
+            <Route path="/product/" element={<Product/>} />
+            <Route path="/product/:id" element={<ProductDetail/>} />
             <Route path="/faq" element={<FAQ/>} />
             <Route path="/karyawan" element={<KaryawanPage/>} />
             <Route path="/reservasi" element={<ReservasiPage/>} />
