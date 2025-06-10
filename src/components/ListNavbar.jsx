@@ -2,14 +2,15 @@ import { NavLink } from "react-router-dom";
 
 export default function ListNavbar() {
   const menuClass = ({ isActive }) =>
-    `px-4 py-2 rounded-full text-sm font-medium transition duration-300 cursor-pointer 
-   ${isActive ? "bg-gray-800 text-white" : "text-gray-500 hover:bg-gray-800 hover:text-white"}`;
+  `px-4 py-2 rounded-full text-sm font-medium font-sans transition duration-300 cursor-pointer 
+  ${isActive ? "bg-black text-white" : "text-gray-500 hover:bg-black hover:text-white"}`;
+
 
   return (
     <ul className="flex gap-4 flex-wrap">
       {/* Menu Utama */}
       <li>
-        <NavLink to="/" className={menuClass}>
+        <NavLink to="/" className={menuClass}>  
           Home
         </NavLink>
       </li>

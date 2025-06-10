@@ -2,10 +2,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-10 px-6 md:px-20">
+    <footer className="bg-black text-white py-10 px-6 md:px-20">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="text-xl font-semibold mb-4 md:mb-0">
-          Vamos <span className="text-yellow-500">Barbershop</span>
+          Vamos <span className="text-white">Barbershop</span>
         </div>
         <div className="flex space-x-6">
           <a href="#" className="hover:text-yellow-500 transition">Instagram</a>
