@@ -27,38 +27,44 @@ const ContactUs = lazy(() => import("./components/ContactUs"));
 const Pricing = lazy(() => import("./pages/PricingPage"));
 const PricingDetail = lazy(() => import("./pages/PricingDetail"));
 const Review = lazy(() => import("./pages/review"));
-
-
+const LowonganPage = lazy(() => import("./components/LowonganPage"));
+const LayananGuest = lazy(() => import("./components/LayananGuest"));
+const KaryawanGuest = lazy(() => import("./components/KaryawanGuest"));
+const ProdukGuest = lazy(() => import("./components/ProdukGuest"));
 
 function App() {
   return (
     <BrowserRouter>
-      <Suspense fallback={<Loading/>}>
+      <Suspense fallback={<Loading />}>
         <Routes>
           {/* Main layout */}
           <Route element={<MainLayout />}>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/product/" element={<Product/>} />
-            <Route path="/product/:id" element={<ProductDetail/>} />
-            <Route path="/faq" element={<FAQ/>} />
-            <Route path="/karyawan" element={<KaryawanPage/>} />
-             <Route path="/karyawan/:id" element={<KaryawanDetail/>} />
-            <Route path="/reservasi" element={<ReservasiPage/>} />
-            <Route path="/aboutus" element={<AboutUs/>} />
-            <Route path="/contactus" element={<ContactUs/>} />
-            <Route path="/pricing" element={<Pricing/>} />
-          <Route path="/pricing/:menuName" element={<PricingDetail />} />
-            <Route path="/review" element={<Review/>} />
+            <Route path="/product/" element={<Product />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/karyawan" element={<KaryawanPage />} />
+            <Route path="/karyawan/:id" element={<KaryawanDetail />} />
+            <Route path="/reservasi" element={<ReservasiPage />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/pricing/:menuName" element={<PricingDetail />} />
+            <Route path="/review" element={<Review />} />
+            <Route path="/lowongan" element={<LowonganPage />} />
+            <Route path="/layanan" element={<LayananGuest />} />
+            <Route path="/karyawanguest" element={<KaryawanGuest />} />
+            <Route path="/produkGuest" element={<ProdukGuest />} />
           </Route>
 
           {/* Auth layout */}
           <Route element={<AuthLayout />}>
-          <Route path="/*" element={<NotFound />} />
-          <Route path="/401" element={<Error401 />} />
-           
+            <Route path="/*" element={<NotFound />} />
+            <Route path="/401" element={<Error401 />} />
+
           </Route>
 
-    
+
         </Routes>
       </Suspense>
     </BrowserRouter>
