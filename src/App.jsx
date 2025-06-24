@@ -17,8 +17,7 @@ const LandingPage = lazy(() => import("./pages/LandingPage"));
 const Error401 = lazy(() => import("./pages/Error401"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const KaryawanPage = lazy(() => import("./pages/KaryawanPage"));
-
-const KaryawanDetail = lazy(() => import("./pages/KaryawanDetail"));
+const KaryawanDetail= lazy (() => import ("./components/KaryawanDetail"))
 const ReservasiPage = lazy(() => import("./pages/ReservasiPage"));
 const Product = lazy(() => import("./pages/Product"));
 const ProductDetail = lazy(() => import("./pages/ProductDetail"));
@@ -28,41 +27,48 @@ const ContactUs = lazy(() => import("./components/ContactUs"));
 const Pricing = lazy(() => import("./pages/PricingPage"));
 const PricingDetail = lazy(() => import("./pages/PricingDetail"));
 const Review = lazy(() => import("./pages/review"));
-const BookingForm = React.lazy(() => import("./components/BookingForm"))
-const NewsPage = React.lazy(() => import("./components/NewsPage"))
+
+const LowonganPage = lazy(() => import("./components/LowonganPage"));
+const LayananGuest = lazy(() => import("./components/LayananGuest"));
+
+const ProdukGuest = lazy(() => import("./components/ProdukGuest"));
 
 
 function App() {
   return (
     <BrowserRouter>
-      <Suspense fallback={<Loading/>}>
+      <Suspense fallback={<Loading />}>
         <Routes>
           {/* Main layout */}
           <Route element={<MainLayout />}>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/product/" element={<Product/>} />
-            <Route path="/product/:id" element={<ProductDetail/>} />
-            <Route path="/faq" element={<FAQ/>} />
-            <Route path="/karyawan" element={<KaryawanPage/>} />
-             <Route path="/karyawan/:id" element={<KaryawanDetail/>} />
-            <Route path="/reservasi" element={<ReservasiPage/>} />
-            <Route path="/aboutus" element={<AboutUs/>} />
-            <Route path="/contactus" element={<ContactUs/>} />
-            <Route path="/pricing" element={<Pricing/>} />
-          <Route path="/pricing/:menuName" element={<PricingDetail />} />
-            <Route path="/review" element={<Review/>} />
-             <Route path="/booking" element={<BookingForm/>} />
-             <Route path="/new" element={<NewsPage/>} />
+
+            <Route path="/product/" element={<Product />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/karyawan" element={<KaryawanPage />} />
+            <Route path="/karyawan/:id" element={<KaryawanDetail />} />
+            <Route path="/reservasi" element={<ReservasiPage />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/pricing/:menuName" element={<PricingDetail />} />
+            <Route path="/review" element={<Review />} />
+            <Route path="/lowongan" element={<LowonganPage />} />
+            <Route path="/layanan" element={<LayananGuest />} />
+            {/* <Route path="/karyawanguest" element={<KaryawanGuest />} /> */}
+            <Route path="/produkGuest" element={<ProdukGuest />} />
+
           </Route>
 
           {/* Auth layout */}
           <Route element={<AuthLayout />}>
-          <Route path="/*" element={<NotFound />} />
-          <Route path="/401" element={<Error401 />} />
-           
+            <Route path="/*" element={<NotFound />} />
+            <Route path="/401" element={<Error401 />} />
+
           </Route>
 
-    
+
         </Routes>
       </Suspense>
     </BrowserRouter>
