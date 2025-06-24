@@ -20,7 +20,7 @@ const KaryawanPage = lazy(() => import("./pages/KaryawanPage"));
 const KaryawanDetail= lazy (() => import ("./components/KaryawanDetail"))
 const ReservasiPage = lazy(() => import("./pages/ReservasiPage"));
 const Product = lazy(() => import("./pages/Product"));
-const ProductDetail = lazy(() => import("./pages/ProductDetail"));
+// const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const AboutUs = lazy(() => import("./components/About"));
 const ContactUs = lazy(() => import("./components/ContactUs"));
@@ -30,9 +30,8 @@ const Review = lazy(() => import("./pages/review"));
 
 const LowonganPage = lazy(() => import("./components/LowonganPage"));
 const LayananGuest = lazy(() => import("./components/LayananGuest"));
-
 const ProdukGuest = lazy(() => import("./components/ProdukGuest"));
-
+const BookingForm = lazy(() => import("./components/BookingForm"));
 
 function App() {
   return (
@@ -43,8 +42,8 @@ function App() {
           <Route element={<MainLayout />}>
             <Route path="/" element={<LandingPage />} />
 
-            <Route path="/product/" element={<Product />} />
-            <Route path="/product/:id" element={<ProductDetail />} />
+            {/* <Route path="/product/" element={<Product />} />
+            <Route path="/product/:id" element={<ProductDetail />} /> */}
             <Route path="/faq" element={<FAQ />} />
             <Route path="/karyawan" element={<KaryawanPage />} />
             <Route path="/karyawan/:id" element={<KaryawanDetail />} />
@@ -58,7 +57,7 @@ function App() {
             <Route path="/layanan" element={<LayananGuest />} />
             {/* <Route path="/karyawanguest" element={<KaryawanGuest />} /> */}
             <Route path="/produkGuest" element={<ProdukGuest />} />
-
+            <Route path="/booking" element={<BookingForm />} />
           </Route>
 
           {/* Auth layout */}

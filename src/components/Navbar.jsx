@@ -1,4 +1,4 @@
-import { AiFillBell } from "react-icons/ai"; 
+import { AiFillBell } from "react-icons/ai";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import ListNavbar from "./ListNavbar";
@@ -8,16 +8,26 @@ const Navbar = () => {
 
   return (
     <nav className="flex items-center justify-between px-8 py-4 shadow bg-black sticky top-0 z-50">
-      <h2 className="text-[22px] font-bold text-white">
-        Vamos Barbershop
-      </h2>
+      <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate("/")}>
+        <img
+          src="/img/logo.png" // ganti path sesuai file logo kamu
+          alt="Logo Vamos"
+          className="w-10 h-10"
+        />
+        <h2 className="text-[22px] font-bold text-white">
+          Vamos Barbershop
+        </h2>
+      </div>
+
       <ListNavbar />
+
 
       <div className="flex items-center space-x-6">
         {/* Tombol Booking */}
 
-        <button className="bg-white text-white px-4 py-2 rounded-full hover:bg-white transition">
-
+        <button
+          onClick={() => navigate("/booking")}
+          className="bg-white text-white px-4 py-2 rounded-full hover:bg-white transition">
           Booking
         </button>
 

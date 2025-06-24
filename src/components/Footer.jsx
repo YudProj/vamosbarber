@@ -8,9 +8,30 @@ const Footer = () => {
           Vamos <span className="text-white">Barbershop</span>
         </div>
         <div className="flex space-x-6">
-          <a href="#" className="hover:text-yellow-500 transition">Instagram</a>
-          <a href="#" className="hover:text-yellow-500 transition">WhatsApp</a>
-          <a href="#" className="hover:text-yellow-500 transition">YouTube</a>
+          <a
+            href="https://www.instagram.com/vamosbarber/?__pwa=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 transition"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 transition"
+          >
+            WhatsApp
+          </a>
+          <a
+            href="https://www.youtube.com/@captainbarbershopid"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 transition"
+          >
+            YouTube
+          </a>
         </div>
       </div>
       <div className="text-center text-sm text-gray-400 mt-6">

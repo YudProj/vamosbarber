@@ -15,7 +15,7 @@ export default function ListNavbar() {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/product" className={menuClass}>
+        <NavLink to="/produkGuest" className={menuClass}>
           Produk
         </NavLink>
       </li>
