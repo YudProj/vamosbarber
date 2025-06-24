@@ -1,0 +1,19 @@
+
+[
+  {
+    "id": 1,
+    "title": "Vamos Barbershop Buka Cabang Baru di Jakarta",
+    "image": "/img/jakarta-branch.jpg",
+    "date": "2025-06-01",
+    "summary": "Vamos Barbershop resmi membuka cabang terbaru di pusat Jakarta, menawarkan layanan premium untuk semua pelanggan.",
+    "content": "Kami sangat senang mengumumkan pembukaan cabang baru Vamos Barbershop di Jakarta yang dilengkapi dengan fasilitas modern dan tenaga ahli profesional..."
+  },
+  {
+    "id": 2,
+    "title": "Promo Khusus Bulan Ini: Diskon 20% Layanan Cukur Rambut",
+    "image": "/img/promo1.jpg",
+    "date": "2025-06-05",
+    "summary": "Dapatkan potongan harga 20% untuk layanan cukur rambut selama bulan Juni di semua cabang Vamos Barbershop.",
+    "content": "Nikmati layanan cukur rambut premium dengan harga spesial selama bulan Juni. Jangan lewatkan kesempatan mendapatkan gaya rambut terbaik dengan diskon menarik..."
+  }
+]

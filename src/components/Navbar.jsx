@@ -1,17 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import ListNavbar from "./ListNavbar";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <nav className="flex items-center justify-between px-8 py-4 shadow bg-white sticky top-0 z-50">
-      <h2 className="text-2xl font-bold text-gray-900">
+      <h2 className="text-2xl font-bold text-gray-900 cursor-pointer" onClick={() => navigate("/")}>
         Vamos Barbershop
       </h2>
-        <ListNavbar/>
+      <ListNavbar />
 
       <div className="flex items-center space-x-6">
         {/* Tombol Booking */}
-        <button className="bg-yellow-500 text-white px-4 py-2 rounded-full hover:bg-yellow-600 transition">
+        <button
+          onClick={() => navigate("/booking")}
+          className="bg-yellow-500 text-white px-4 py-2 rounded-full hover:bg-yellow-600 transition"
+        >
           Booking
         </button>
 

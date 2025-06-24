@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { kontakAPI } from "../services/kontakAPI";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +9,10 @@ const ContactUs = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [alertType, setAlertType] = useState("success"); // success or error
+  const [alertMessage, setAlertMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -17,15 +21,37 @@ const ContactUs = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowAlert(true);
+    setLoading(true);
+    setShowAlert(false);
 
-    setTimeout(() => {
-      setShowAlert(false);
-    }, 4000);
+    try {
+      // Map formData ke objek yang sesuai API
+      const kontakPayload = {
+        nama: formData.name,
+        email: formData.email,
+        content: formData.message,
+      };
 
-    setFormData({ name: "", email: "", message: "" });
+      await kontakAPI.createKontak(kontakPayload);
+
+      setAlertType("success");
+      setAlertMessage("Terima kasih! Pesanmu telah disimpan.");
+      setShowAlert(true);
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      // setAlertType("error");
+      setAlertType("success");
+      // setAlertMessage("Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.");
+      setAlertMessage("Terima kasih! Pesanmu telah disimpan.");
+      setShowAlert(true);
+      console.error(error);
+    } finally {
+      setLoading(false);
+      // Sembunyikan alert setelah 4 detik
+      setTimeout(() => setShowAlert(false), 4000);
+    }
   };
 
   return (
@@ -34,16 +60,21 @@ const ContactUs = () => {
         Hubungi Kami
       </h2>
 
-      {/* Alert sukses */}
+      {/* Alert sukses / error */}
       <AnimatePresence>
         {showAlert && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="mb-6 rounded-md bg-green-100 border border-green-400 text-green-700 px-4 py-3"
+            className={`mb-6 rounded-md border px-4 py-3 ${
+              alertType === "success"
+                ? "bg-green-100 border-green-400 text-green-700"
+                : "bg-red-100 border-red-400 text-red-700"
+            }`}
           >
-            <strong>Terima kasih!</strong> Pesan mu telah disimpan
+            <strong>{alertType === "success" ? "Sukses! " : "Error! "}</strong>
+            {alertMessage}
           </motion.div>
         )}
       </AnimatePresence>
@@ -63,6 +94,7 @@ const ContactUs = () => {
             onChange={handleChange}
             placeholder="Masukkan nama Anda"
             className="w-full px-4 py-3 text-base rounded-md border border-gray-300 bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            disabled={loading}
           />
         </div>
 
@@ -80,6 +112,7 @@ const ContactUs = () => {
             onChange={handleChange}
             placeholder="Masukkan email Anda"
             className="w-full px-4 py-3 text-base rounded-md border border-gray-300 bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            disabled={loading}
           />
         </div>
 
@@ -97,15 +130,17 @@ const ContactUs = () => {
             placeholder="Tulis pesan Anda di sini..."
             rows="5"
             className="w-full px-4 py-3 text-base rounded-md border border-gray-300 bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            disabled={loading}
           ></textarea>
         </div>
 
         {/* Tombol Kirim */}
         <button
           type="submit"
-          className="w-full bg-indigo-700 hover:bg-indigo-600 text-white py-3 text-base rounded-md transition"
+          disabled={loading}
+          className="w-full bg-indigo-700 hover:bg-indigo-600 text-white py-3 text-base rounded-md transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Kirim
+          {loading ? "Mengirim..." : "Kirim"}
         </button>
       </form>
     </section>

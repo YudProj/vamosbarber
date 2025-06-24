@@ -5,6 +5,7 @@ import "./assets/tailwind.css";
 import MainLayout from "./layouts/MainLayout";
 import AuthLayout from "./layouts/AuthLayout";
 import Loading from "./components/Loading";
+import NewsForm from "./components/NewsForm";
 
 
 
@@ -27,7 +28,8 @@ const ContactUs = lazy(() => import("./components/ContactUs"));
 const Pricing = lazy(() => import("./pages/PricingPage"));
 const PricingDetail = lazy(() => import("./pages/PricingDetail"));
 const Review = lazy(() => import("./pages/review"));
-
+const BookingForm = React.lazy(() => import("./components/BookingForm"))
+const NewsPage = React.lazy(() => import("./components/NewsPage"))
 
 
 function App() {
@@ -49,6 +51,8 @@ function App() {
             <Route path="/pricing" element={<Pricing/>} />
           <Route path="/pricing/:menuName" element={<PricingDetail />} />
             <Route path="/review" element={<Review/>} />
+             <Route path="/booking" element={<BookingForm/>} />
+             <Route path="/new" element={<NewsPage/>} />
           </Route>
 
           {/* Auth layout */}

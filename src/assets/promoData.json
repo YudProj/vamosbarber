@@ -1,0 +1,17 @@
+
+[
+  {
+    "id": 1,
+    "title": "Voucher Diskon 20%",
+    "image": "/img/promo2.jpg",
+    "description": "Gunakan voucher ini untuk mendapatkan potongan 20% untuk semua layanan cukur.",
+    "valid_until": "2025-06-30"
+  },
+  {
+    "id": 2,
+    "title": "Paket Cukur & Perawatan",
+    "image": "/img/promo3.jpg",
+    "description": "Dapatkan paket hemat cukur rambut dan perawatan kulit dengan harga spesial.",
+    "valid_until": "2025-07-15"
+  }
+]
