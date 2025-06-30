@@ -15,4 +15,9 @@ export const produkAPI = {
     const response = await axios.get(API_URL, { headers });
     return response.data;
   },
+  
+  fetchById: async (id) => {
+    const res = await axios.get(`${API_URL}?id=eq.${id}`, { headers });
+    return res.data[0];
+  }
 };

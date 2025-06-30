@@ -21,17 +21,18 @@ export default function ListNavbar() {
       </li>
    
       
-      {/* Menu Error */}
-      {/* <li>
-        <NavLink to="/401" className={menuClass}>
-          Error 401
-        </NavLink>
-      </li> */}
+     
    <li className="relative group">
         <span className="px-4 py-2 rounded-full text-sm font-medium font-sans transition duration-300 cursor-pointer text-gray-500 hover:bg-black hover:text-white">
           About Us ▾
         </span>
         <ul className="absolute hidden group-hover:block bg-white shadow-lg rounded-lg p-2 z-10 text-sm mt-2 w-44">
+           <li>
+            <NavLink to="/new" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">
+              Berita Terkini
+            </NavLink>
+          </li>
+          
           <li>
             <NavLink to="/aboutus" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">
               Tentang Kami
@@ -82,7 +83,7 @@ export default function ListNavbar() {
 
       <li className="relative group">
         <span className="px-4 py-2 rounded-full text-sm font-medium font-sans transition duration-300 cursor-pointer text-gray-500 hover:bg-black hover:text-white">
-          Data ▾
+          Join Us ▾
         </span>
         <ul className="absolute hidden group-hover:block bg-white shadow-lg rounded-lg p-2 z-10 text-sm mt-2 w-44">
           <li>
@@ -95,16 +96,7 @@ export default function ListNavbar() {
               Layanan
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/karyawanguest" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">
-              karyawan
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/produkGuest" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">
-              Produk
-            </NavLink>
-          </li>
+        
         </ul>
       </li>
 
@@ -120,16 +112,7 @@ export default function ListNavbar() {
         </a>
       </li>
 
-      {/* <li>
-        <NavLink to="/402" className={menuClass}>
-          Error 402
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/403" className={menuClass}>
-          Error 403
-        </NavLink>
-      </li> */}
+     
     </ul>
   );
 }

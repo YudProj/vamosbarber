@@ -41,7 +41,7 @@ export default function KaryawanDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f9f6f1] flex items-center justify-center px-4 font-[serif]">
+    <div className="min-h-screen bg-[#f9f6f1] flex items-center justify-center px-4 font-[serif] rounded-2xl">
       <div className="bg-white rounded-2xl shadow-xl p-10 w-full max-w-2xl text-center">
         <img
           src={karyawan.foto || "/default-avatar.png"}

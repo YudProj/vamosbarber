@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <section className="bg-white w-full py-12">
+    <section className="bg-white w-full py-12 rounded-2xl">
       <div className="w-full px-6 md:px-12 lg:px-20">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           {/* Gambar kiri */}

@@ -50,7 +50,8 @@ const CustomerReviews = () => {
   };
 
   return (
-    <section className="bg-[#f9f6f1] py-50 px-20 md:px-12 lg:px-20">
+    
+    <section className="bg-[#f9f6f1] py-50 px-20 md:px-12 lg:px-20 rounded-2xl">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-900 mb-10 font-serif">
           Apa Kata Mereka

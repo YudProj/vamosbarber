@@ -9,7 +9,7 @@ export default function FAQList() {
   }, []);
 
   return (
-    <div className="bg-[#f9f6f1] py-12 px-6">
+    <div className="bg-[#f9f6f1] py-12 px-6 rounded-2xl">
       <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Pertanyaan Umum</h2>
       <div className="space-y-4 max-w-3xl mx-auto divide-y divide-gray-300">
         {faq.map((item) => (

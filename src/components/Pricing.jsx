@@ -16,7 +16,7 @@ const Pricing = () => {
   };
 
   return (
-    <section className="bg-[#f9f6f1] py-40 px-6 md:px-12 lg:px-20">
+    <section className="bg-[#f9f6f1] py-40 px-6 md:px-12 lg:px-20 rounded-2xl">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-900 mb-10">Daftar Harga</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

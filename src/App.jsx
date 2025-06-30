@@ -5,7 +5,6 @@ import "./assets/tailwind.css";
 import MainLayout from "./layouts/MainLayout";
 import AuthLayout from "./layouts/AuthLayout";
 import Loading from "./components/Loading";
-import NewsForm from "./components/NewsForm";
 
 
 
@@ -17,22 +16,22 @@ const LandingPage = lazy(() => import("./pages/LandingPage"));
 const Error401 = lazy(() => import("./pages/Error401"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const KaryawanPage = lazy(() => import("./pages/KaryawanPage"));
-const KaryawanDetail= lazy (() => import ("./components/KaryawanDetail"))
+
+const KaryawanDetail = lazy(() => import("./components/KaryawanDetail"));
 const ReservasiPage = lazy(() => import("./pages/ReservasiPage"));
 const Product = lazy(() => import("./pages/Product"));
-// const ProductDetail = lazy(() => import("./pages/ProductDetail"));
+const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const AboutUs = lazy(() => import("./components/About"));
 const ContactUs = lazy(() => import("./components/ContactUs"));
 const Pricing = lazy(() => import("./pages/PricingPage"));
 const PricingDetail = lazy(() => import("./pages/PricingDetail"));
 const Review = lazy(() => import("./pages/review"));
-
 const LowonganPage = lazy(() => import("./components/LowonganPage"));
 const LayananGuest = lazy(() => import("./components/LayananGuest"));
 const ProdukGuest = lazy(() => import("./components/ProdukGuest"));
 const BookingForm = lazy(() => import("./components/BookingForm"));
-
+const NewsPage = lazy(() => import("./components/NewsPage"));
 function App() {
   return (
     <BrowserRouter>
@@ -41,7 +40,6 @@ function App() {
           {/* Main layout */}
           <Route element={<MainLayout />}>
             <Route path="/" element={<LandingPage />} />
-
             {/* <Route path="/product/" element={<Product />} />
             <Route path="/product/:id" element={<ProductDetail />} /> */}
             <Route path="/faq" element={<FAQ />} />
@@ -55,9 +53,10 @@ function App() {
             <Route path="/review" element={<Review />} />
             <Route path="/lowongan" element={<LowonganPage />} />
             <Route path="/layanan" element={<LayananGuest />} />
-            {/* <Route path="/karyawanguest" element={<KaryawanGuest />} /> */}
+          <Route path="/booking" element={<BookingForm/>} />
             <Route path="/produkGuest" element={<ProdukGuest />} />
-            <Route path="/booking" element={<BookingForm />} />
+            <Route path="/produk/:id" element={<ProductDetail />} />
+            <Route path="/news1" element={<NewsPage />} />
           </Route>
 
           {/* Auth layout */}

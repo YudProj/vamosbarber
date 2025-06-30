@@ -11,7 +11,7 @@ export default function KaryawanList() {
       try {
         const data = await karyawanAPI.fetchAll();
         setKaryawan(data);
-      } catch (err) {
+      } catch (err) {dd
         console.error("Gagal ambil data karyawan:", err);
       }
     };
@@ -20,7 +20,7 @@ export default function KaryawanList() {
   }, []);
 
   return (
-    <div className="bg-[#f9f6f1] py-12 px-6 min-h-screen font-sans">
+    <div className="bg-[#f9f6f1] py-12 px-6 min-h-screen font-sans rounded-2xl">
       <h2 className="text-4xl font-bold mb-8 text-center text-gray-800 font-serif">
         Daftar Karyawan
       </h2>
