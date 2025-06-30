@@ -56,7 +56,7 @@ function App() {
           <Route path="/booking" element={<BookingForm/>} />
             <Route path="/produkGuest" element={<ProdukGuest />} />
             <Route path="/produk/:id" element={<ProductDetail />} />
-            <Route path="/news1" element={<NewsPage />} />
+            <Route path="/new" element={<NewsPage />} />
           </Route>
 
           {/* Auth layout */}
