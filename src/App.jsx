@@ -32,6 +32,7 @@ const LayananGuest = lazy(() => import("./components/LayananGuest"));
 const ProdukGuest = lazy(() => import("./components/ProdukGuest"));
 const BookingForm = lazy(() => import("./components/BookingForm"));
 const NewsPage = lazy(() => import("./components/NewsPage"));
+const SimulasiHarga = lazy(() => import("./components/SimulasiHarga"));
 function App() {
   return (
     <BrowserRouter>
@@ -57,6 +58,7 @@ function App() {
             <Route path="/produkGuest" element={<ProdukGuest />} />
             <Route path="/produk/:id" element={<ProductDetail />} />
             <Route path="/new" element={<NewsPage />} />
+             <Route path="/simulasi" element={<SimulasiHarga />} />
           </Route>
 
           {/* Auth layout */}

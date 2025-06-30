@@ -19,20 +19,20 @@ export default function ListNavbar() {
           Produk
         </NavLink>
       </li>
-   
-      
-     
-   <li className="relative group">
+
+
+
+      <li className="relative group">
         <span className="px-4 py-2 rounded-full text-sm font-medium font-sans transition duration-300 cursor-pointer text-gray-500 hover:bg-black hover:text-white">
           About Us ▾
         </span>
         <ul className="absolute hidden group-hover:block bg-white shadow-lg rounded-lg p-2 z-10 text-sm mt-2 w-44">
-           <li>
+          <li>
             <NavLink to="/new" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">
               Berita Terkini
             </NavLink>
           </li>
-          
+
           <li>
             <NavLink to="/aboutus" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">
               Tentang Kami
@@ -48,7 +48,7 @@ export default function ListNavbar() {
               Team Vamos
             </NavLink>
           </li>
-          
+
         </ul>
       </li>
 
@@ -68,17 +68,30 @@ export default function ListNavbar() {
               FaQ
             </NavLink>
           </li>
-    
+
         </ul>
       </li>
 
 
-
-      <li>
-        <NavLink to="/pricing" className={menuClass}>
-          Harga
-        </NavLink>
+     <li className="relative group">
+        <span className="px-4 py-2 rounded-full text-sm font-medium font-sans transition duration-300 cursor-pointer text-gray-500 hover:bg-black hover:text-white">
+          Layanan ▾
+        </span>
+        <ul className="absolute hidden group-hover:block bg-white shadow-lg rounded-lg p-2 z-10 text-sm mt-2 w-44">
+          <li>
+            <NavLink to="/pricing" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">
+              Layanan
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/simulasi" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">
+              Simulasi Perhitungan
+            </NavLink>
+          </li>
+        </ul>
       </li>
+
+
 
 
       <li className="relative group">
@@ -96,7 +109,6 @@ export default function ListNavbar() {
               Layanan
             </NavLink>
           </li>
-        
         </ul>
       </li>
 
@@ -112,7 +124,7 @@ export default function ListNavbar() {
         </a>
       </li>
 
-     
+
     </ul>
   );
 }
