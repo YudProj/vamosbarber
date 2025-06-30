@@ -23,48 +23,29 @@ const ProductDetail = () => {
   }, [id]);
 
   if (loading) {
-    return <p style={{ textAlign: 'center', marginTop: '40px' }}>Memuat data produk...</p>;
+    return <p className="text-center mt-10">Memuat data produk...</p>;
   }
 
   if (!produk) {
-    return <p style={{ textAlign: 'center', marginTop: '40px' }}>Produk tidak ditemukan.</p>;
+    return <p className="text-center mt-10">Produk tidak ditemukan.</p>;
   }
 
   return (
-    <div style={{ backgroundColor: '#f3f4f6', minHeight: '100vh', padding: '40px' }}>
-      <div
-        style={{
-          maxWidth: '1000px',
-          margin: '0 auto',
-          backgroundColor: 'white',
-          padding: '30px',
-          borderRadius: '16px',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
-          display: 'flex',
-          gap: '40px',
-          alignItems: 'flex-start',
-          flexWrap: 'wrap',
-        }}
-      >
-        <img
-          src={produk.gambar}
-          alt={produk.name}
-          style={{
-            width: '320px',
-            height: '320px',
-            objectFit: 'cover',
-            borderRadius: '12px',
-            flexShrink: 0,
-            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-          }}
-        />
+    <section className="bg-gray-100 min-h-screen px-4 py-10 rounded-2xl">
+      <div className="max-w-5xl mx-auto bg-white p-6 md:p-10 rounded-2xl shadow flex flex-col lg:flex-row gap-10">
+        {/* Gambar Produk */}
+        <div className="flex-shrink-0">
+          <img
+            src={produk.gambar}
+            alt={produk.name}
+            className="w-80 h-80 object-cover rounded-2xl shadow-md"
+          />
+        </div>
 
-        <div style={{ flex: 1, minWidth: '300px' }}>
-          <h2 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '16px' }}>
-            {produk.name}
-          </h2>
-
-          <div style={{ lineHeight: '1.8', fontSize: '16px', color: '#333' }}>
+        {/* Detail Produk */}
+        <div className="flex-1 min-w-[280px]">
+          <h2 className="text-2xl font-bold mb-4">{produk.name}</h2>
+          <div className="text-gray-800 space-y-2 text-sm md:text-base">
             <p><strong>Harga:</strong> Rp {produk.price?.toLocaleString()}</p>
             <p><strong>Stok:</strong> {produk.stock}</p>
             <p><strong>Kategori:</strong> {produk.kategori}</p>
@@ -75,25 +56,17 @@ const ProductDetail = () => {
             <p><strong>Berat:</strong> {produk.weight} gram</p>
           </div>
 
-          <div style={{ marginTop: '30px' }}>
+          <div className="mt-6">
             <a
               href="/produkGuest"
-              style={{
-                display: 'inline-block',
-                padding: '10px 20px',
-                backgroundColor: '#111',
-                color: 'white',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                fontWeight: '500',
-              }}
+              className="inline-block bg-black text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition"
             >
               ← Kembali ke Daftar Produk
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
